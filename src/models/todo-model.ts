@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["finished", "ongoing", "pending"],
+      enum: ["completed", "ongoing", "pending"],
       default: "ongoing",
     },
     start_date: {

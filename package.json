@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "build": "npx tsc",
-    "start": "concurrently \"npx tsc -w\" \"nodemon build/app.js\""
+    "start": "concurrently \"npx tsc -w\" \"nodemon build/app.js\"",
+    "production": "nodemon build/app.js"
   },
   "author": "candie",
   "license": "ISC",

@@ -76,3 +76,52 @@ export const viewTodo = catchAsync(
     });
   }
 );
+
+export const updateTodo = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { todoId, user } = req.params;
+
+    const { name, description, start_date, status, priority_level } = req.body;
+
+    const data = { name, description, start_date, status, priority_level };
+
+    if (!todoId || !user) {
+      return next(new AppError("Invalid identifier", 400));
+    }
+
+    const todo = await Todo.findOneAndUpdate({ user, _id: todoId }, data, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!todo) {
+      return next(new AppError("Todo not found", 404));
+    }
+
+    return res.status(200).json({
+      status: "Success",
+      data: todo,
+    });
+  }
+);
+
+export const deleteTodo = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { todoId, user } = req.params;
+
+    if (!todoId || !user) {
+      return next(new AppError("Invalid identifier", 400));
+    }
+
+    const todo = await Todo.findOneAndDelete({ user, _id: todoId });
+
+    if (!todo) {
+      return next(new AppError("Todo not found", 404));
+    }
+
+    return res.status(204).json({
+      status: "Success",
+      data: todo,
+    });
+  }
+);
