@@ -39,3 +39,15 @@ PORT=8000
 DATABASE=mongodb+srv://candie:IQiISDaO6WnZbMjM@cluster0.6txdose.mongodb.net/straitpay?retryWrites=true&w=majority
 PASSWORD=IQiISDaO6WnZbMjM
 ```
+
+## Project Github link
+
+https://github.com/MrCandie/straitpay--todoapp-backend
+
+## Github URL
+
+https://github.com/MrCandie
+
+## Portfolio URL
+
+https://mrcandie.com

@@ -22,7 +22,7 @@ app.use((0, cors_1.default)(corsOptions));
 app.use(body_parser_1.default.json());
 app.use(express_1.default.json());
 app.get("/", (req, res) => {
-    res.send("<h1>WELCOME TO STRAITPAY</h1>");
+    res.send("<p>WELCOME TO STRAITPAY</p>");
 });
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");

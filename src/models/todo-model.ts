@@ -21,16 +21,14 @@ const schema = new mongoose.Schema(
     status: {
       type: String,
       enum: ["completed", "ongoing", "pending"],
-      default: "ongoing",
+      default: "pending",
     },
     start_date: {
       type: Date,
       default: Date.now(),
       required: [true, "Start date is required"],
     },
-    end_date: {
-      type: Date,
-    },
+
     user: {
       type: String,
       required: [true, "Task must belong to a user"],

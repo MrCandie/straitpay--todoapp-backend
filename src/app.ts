@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("<h1>WELCOME TO STRAITPAY</h1>");
+  res.send("<p>WELCOME TO STRAITPAY</p>");
 });
 
 app.use((req: Request, res: Response, next: NextFunction) => {
